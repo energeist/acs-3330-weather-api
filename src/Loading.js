@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Loading.css';
 
-function Loading(props) {
-  const { message } = props;
+function Loading() {
   return (
     <div className="Loading">
       <p>Waiting for weather data...</p>

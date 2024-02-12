@@ -1,7 +1,6 @@
-// import React, { useState, useEffect } from 'react';
-import './WeatherDisplay.css';
+import React from 'react';
 
-function WeatherDisplay(props) {
+function LocalWeather(props) {
   const { unit, temp, location, feelsLike, icon, description, humidity, visibility, cod, message } = props;
 
   if (cod !== 200) {
@@ -20,10 +19,10 @@ function WeatherDisplay(props) {
     tempSymbol = 'K';
   }
   return (
-    <div className="WeatherDisplay">
+    <div className="LocalWeather">
       <h2>Location: {location}</h2>
-      <div className="upperSection">
-        <div className="temperature">
+      <div className="localUpperSection">
+        <div className="localTemperature">
           <h1>{parseFloat(temp).toFixed(1)}{tempSymbol}</h1>
           <small>Feels like: {feelsLike}{tempSymbol}</small>
         </div>
@@ -31,11 +30,11 @@ function WeatherDisplay(props) {
       </div>
       <div>
         <p>{description}</p>
-        <p>Humidity: {humidity}</p>
+        <p>Humidity: {humidity}%</p>
         <p>Visibility: {visibility} ft</p>
       </div>
     </div>
   );
 }
 
-export default WeatherDisplay;
+export default LocalWeather;
